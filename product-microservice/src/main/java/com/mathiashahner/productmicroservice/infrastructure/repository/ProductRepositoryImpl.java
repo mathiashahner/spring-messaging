@@ -31,4 +31,10 @@ public class ProductRepositoryImpl implements ProductRepository {
     ProductEntity productEntity = productRepositorySpring.save(new ProductEntity(product));
     return productEntity.toProduct();
   }
+
+  @Override
+  public void update(Product product) {
+    ProductEntity productEntity = new ProductEntity(product);
+    productRepositorySpring.save(productEntity);
+  }
 }

@@ -9,4 +9,6 @@ public interface ProductService {
   Product createProduct(Product product);
 
   int getQuantityById(Long id);
+
+  void updateQuantityById(Long id, int quantity);
 }
