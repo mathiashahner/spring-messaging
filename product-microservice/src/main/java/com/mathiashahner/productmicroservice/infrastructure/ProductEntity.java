@@ -23,11 +23,11 @@ public class ProductEntity {
   int quantity;
 
   public ProductEntity(Product product) {
-    id = product.id();
-    name = product.name();
-    description = product.description();
-    price = product.price();
-    quantity = product.quantity();
+    id = product.getId();
+    name = product.getDescription();
+    description = product.getDescription();
+    price = product.getPrice();
+    quantity = product.getQuantity();
   }
 
   public Product toProduct() {

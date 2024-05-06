@@ -13,10 +13,10 @@ public record ProductResponse(
 
   public static ProductResponse toResponse(Product product) {
     return new ProductResponse(
-        product.id(),
-        product.name(),
-        product.description(),
-        product.price(),
-        product.quantity());
+        product.getId(),
+        product.getName(),
+        product.getDescription(),
+        product.getPrice(),
+        product.getQuantity());
   }
 }

@@ -23,6 +23,6 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public int getQuantityById(Long id) {
-    return getProductById(id).quantity();
+    return getProductById(id).getQuantity();
   }
 }

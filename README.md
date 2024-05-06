@@ -1,7 +1,16 @@
 # spring-messaging
 
-- PRODUCT_MICROSERVICE_BASE_URL=http://localhost:8080
-- ORDER_MICROSERVICE_BASE_URL=http://localhost:8081
+- export PRODUCT_MICROSERVICE_BASE_URL=http://localhost:8080
+- export ORDER_MICROSERVICE_BASE_URL=http://localhost:8081
+
+### Technologies:
+- Spring Boot 3
+- Spring Data JDBC
+- H2 Database
+- Apache Kafka
+- RabbitMQ
+- Docker
+- OpenAPI 3 (Swagger)
 
 ### Setup
 
