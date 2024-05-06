@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: order-microservice
+  datasource:
+    url: jdbc:h2:mem:order-microservice
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+api:
+  product:
+    base-url: ${PRODUCT_MICROSERVICE_BASE_URL:http://localhost:8080}
+    get-quantity-uri: /products/{id}/quantity

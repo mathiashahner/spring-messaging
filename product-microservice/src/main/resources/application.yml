@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: product-microservice
+  datasource:
+    url: jdbc:h2:mem:product-microservice
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+api:
+  product:
+    base-url: ${ORDER_MICROSERVICE_BASE_URL}
