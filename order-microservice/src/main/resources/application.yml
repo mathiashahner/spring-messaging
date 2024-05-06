@@ -13,5 +13,5 @@ spring:
       enabled: true
 api:
   product:
-    base-url: ${PRODUCT_MICROSERVICE_BASE_URL:http://localhost:8080}
+    base-url: ${PRODUCT_MICROSERVICE_BASE_URL}
     get-quantity-uri: /products/{id}/quantity

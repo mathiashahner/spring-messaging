@@ -1,19 +1,18 @@
 package com.mathiashahner.ordermicroservice.application.request;
 
-import java.time.LocalDateTime;
-
 import com.mathiashahner.ordermicroservice.domain.Order;
 
+import jakarta.validation.constraints.NotNull;
+
 public record CreateOrderRequest(
-    Long productId,
-    int quantity,
-    LocalDateTime date) {
+    @NotNull Long productId,
+    @NotNull int quantity) {
 
   public static Order toEntity(CreateOrderRequest request) {
     return new Order(
         null,
         request.productId(),
         request.quantity(),
-        request.date());
+        null);
   }
 }

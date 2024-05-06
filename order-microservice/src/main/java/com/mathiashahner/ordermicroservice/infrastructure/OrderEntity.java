@@ -16,16 +16,16 @@ import lombok.NoArgsConstructor;
 public class OrderEntity {
 
   @Id
-  Long id;
-  Long productId;
-  int quantity;
-  LocalDateTime date;
+  private Long id;
+  private Long productId;
+  private int quantity;
+  private LocalDateTime date;
 
   public OrderEntity(Order order) {
-    id = order.id();
-    productId = order.productId();
-    quantity = order.quantity();
-    date = order.date();
+    id = order.getId();
+    productId = order.getProductId();
+    quantity = order.getQuantity();
+    date = order.getDate();
   }
 
   public Order toOrder() {

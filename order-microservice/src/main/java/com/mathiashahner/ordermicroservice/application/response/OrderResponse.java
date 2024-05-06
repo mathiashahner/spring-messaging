@@ -12,9 +12,9 @@ public record OrderResponse(
 
   public static OrderResponse toResponse(Order order) {
     return new OrderResponse(
-        order.id(),
-        order.productId(),
-        order.quantity(),
-        order.date());
+        order.getId(),
+        order.getProductId(),
+        order.getQuantity(),
+        order.getDate());
   }
 }
