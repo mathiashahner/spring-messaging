@@ -23,7 +23,7 @@ public class BeanConfiguration {
 
   @Bean
   OrderService orderService(OrderRepository orderRepository,
-      ProductMicroserviceRepository productMicroserviceRepository) {
-    return new OrderServiceImpl(orderRepository, productMicroserviceRepository);
+      ProductMicroserviceRepository productRepository) {
+    return new OrderServiceImpl(orderRepository, productRepository);
   }
 }

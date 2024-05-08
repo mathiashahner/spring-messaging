@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mathiashahner.productmicroservice.application.request.CreateProductRequest;
+import com.mathiashahner.productmicroservice.application.request.UpdateProductMessage;
 import com.mathiashahner.productmicroservice.application.response.ProductResponse;
 import com.mathiashahner.productmicroservice.domain.Product;
 import com.mathiashahner.productmicroservice.domain.service.ProductService;
@@ -24,6 +28,7 @@ import lombok.RequiredArgsConstructor;
 public class ProductController {
 
   private final ProductService productService;
+  private final ObjectMapper objectMapper;
 
   @GetMapping("/{id}")
   public ResponseEntity<ProductResponse> getProductById(@PathVariable Long id) {
@@ -49,8 +54,9 @@ public class ProductController {
         .body(Integer.valueOf(quantity));
   }
 
-  @KafkaListener(topics = "update-product-quantity-by-id-topic", groupId = "group-1")
-  public void updateQuantityById(Long id, int quantity) {
-    productService.updateQuantityById(id, quantity);
+  @KafkaListener(topics = "#{'${api.kafka.update-product-quantity}'}", groupId = "group-1")
+  public void updateQuantityById(String message) throws JsonMappingException, JsonProcessingException {
+    UpdateProductMessage updateProduct = objectMapper.readValue(message, UpdateProductMessage.class);
+    productService.updateQuantityById(updateProduct.id(), updateProduct.quantity());
   }
 }

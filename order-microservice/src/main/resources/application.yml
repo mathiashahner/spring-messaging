@@ -15,3 +15,5 @@ api:
   product:
     base-url: ${PRODUCT_MICROSERVICE_BASE_URL}
     get-quantity-uri: /products/{id}/quantity
+  kafka:
+    update-product-quantity: update-product-quantity-by-id-topic

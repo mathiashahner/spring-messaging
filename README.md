@@ -24,7 +24,7 @@ cd spring-microservices-messaging
 ```
 - Build and Run:
 ```
-docker-compose up --build
+docker compose up
 ```
 
 ### Test

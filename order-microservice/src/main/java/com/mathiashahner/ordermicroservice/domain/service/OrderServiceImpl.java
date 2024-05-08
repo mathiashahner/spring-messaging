@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderServiceImpl implements OrderService {
 
   private final OrderRepository orderRepository;
-  private final ProductMicroserviceRepository productMicroserviceRepository;
+  private final ProductMicroserviceRepository productRepository;
 
   @Override
   public Order getOrderById(Long id) {
@@ -27,12 +27,14 @@ public class OrderServiceImpl implements OrderService {
       throw new RuntimeException("Order quantity must be greater than zero!");
     }
 
-    Integer productQuantity = productMicroserviceRepository
+    Integer productQuantity = productRepository
         .getQuantityById(order.getProductId());
 
     if (productQuantity < order.getQuantity()) {
       throw new RuntimeException("Insufficient stock!");
     }
+
+    productRepository.updateQuantityById(order.getProductId(), order.getQuantity());
 
     order.setDate(LocalDateTime.now());
     return orderRepository.save(order);

@@ -14,3 +14,5 @@ spring:
 api:
   product:
     base-url: ${ORDER_MICROSERVICE_BASE_URL}
+  kafka:
+    update-product-quantity: update-product-quantity-by-id-topic
