@@ -14,7 +14,7 @@ description
 ### Setup
 
 ``` bash
-# clone repository:
+# clone repository
 git clone https://github.com/mathiashahner/spring-microservices-messaging.git
 
 # access the project directory

@@ -24,7 +24,7 @@ public class ProductEntity {
 
   public ProductEntity(Product product) {
     id = product.getId();
-    name = product.getDescription();
+    name = product.getName();
     description = product.getDescription();
     price = product.getPrice();
     quantity = product.getQuantity();
