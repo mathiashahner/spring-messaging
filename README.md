@@ -1,7 +1,6 @@
 # spring-messaging
 
-- export PRODUCT_MICROSERVICE_BASE_URL=http://localhost:8080
-- export ORDER_MICROSERVICE_BASE_URL=http://localhost:8081
+description
 
 ### Technologies:
 - Spring Boot 3
@@ -14,16 +13,14 @@
 
 ### Setup
 
-- Clone repository:
-```
+``` bash
+# clone repository:
 git clone https://github.com/mathiashahner/spring-microservices-messaging.git
-```
-- Change directory:
-```
+
+# access the project directory
 cd spring-microservices-messaging
-```
-- Build and Run:
-```
+
+# build and run application
 docker compose up
 ```
 

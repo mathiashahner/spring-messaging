@@ -54,7 +54,7 @@ public class ProductController {
         .body(Integer.valueOf(quantity));
   }
 
-  @KafkaListener(topics = "#{'${api.kafka.update-product-quantity}'}", groupId = "group-1")
+  @KafkaListener(topics = "${api.kafka.update-product-quantity}", groupId = "group-1")
   public void updateQuantityById(String message) throws JsonMappingException, JsonProcessingException {
     UpdateProductMessage updateProduct = objectMapper.readValue(message, UpdateProductMessage.class);
     productService.updateQuantityById(updateProduct.id(), updateProduct.quantity());
