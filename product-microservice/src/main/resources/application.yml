@@ -11,6 +11,8 @@ spring:
   h2:
     console:
       enabled: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
 api:
   product:
     base-url: ${ORDER_MICROSERVICE_BASE_URL}
