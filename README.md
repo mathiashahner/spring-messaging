@@ -1,6 +1,8 @@
 # spring-messaging
 
-description
+Example of microservices with asynchronous messaging.
+
+![diagram](https://github.com/mathiashahner/spring-microservices-messaging/blob/docs/docs/diagram.png?raw=true)
 
 ### Technologies:
 - Spring Boot 3
